@@ -1,0 +1,8 @@
+{
+  "method": "global_unstructured_L1",
+  "sparsity": 0.7,
+  "params_total": 109514298,
+  "artifact_size_mb": 417.79,
+  "base": "models/base/bert-base-uncased",
+  "tag": "bert_prune70"
+}
