@@ -16,11 +16,27 @@ Note: The `models/` folder is generated automatically when running scripts local
 ## Project Overview
 This project studies how model compression techniques, such as pruning, affect fairness in large language models.
 
-### Approach
-1. Use a pretrained BERT model as the baseline.  
-2. Apply pruning at different sparsity levels (30%, 50%, 70%).  
-3. Evaluate each version for both performance and fairness metrics.  
-4. Analyze trade-offs between model efficiency and fairness.
+## Proposed Approach
+
+The approach can be divided into three main stages:
+
+1. **Model Selection and Compression**
+2. **Bias Evaluation Design**
+3. **Comparative Analysis of Efficiency–Fairness Tradeoffs**
+
+### Model Selection and Compression
+We will start with pretrained transformer-based models, such as BERT or smaller LLaMA variants to ensure feasibility under compute constraints. Each model will undergo common compression strategies:
+
+- **Pruning:** Gradual magnitude pruning of weights at different sparsity levels.  
+- **Quantization:** Post-training quantization (8-bit and 4-bit) for weight and activation reduction. (TBD)
+- **Knowledge Distillation (Stretch Goal):** Training a smaller student model from a teacher model to study transferred bias patterns. (TBD)
+
+### Bias Evaluation
+TBD
+
+### Comparative Analysis
+TBD
+
 
 ---
 
