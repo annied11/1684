@@ -4,7 +4,6 @@
     1684/
     ├── data/            # Datasets and processed files
     ├── models/          # Auto-created locally when scripts run (not pushed to GitHub)
-    ├── notebooks/       # Experiment notebooks
     ├── results/         # Evaluation outputs (kept in repo)
     ├── scripts/         # Training, pruning, and evaluation scripts
     ├── requirements.txt # Python dependencies
