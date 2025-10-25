@@ -1,0 +1,37 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.log
+*.DS_Store
+
+# Model directories (large files)
+models/
+models/*
+
+# Virtual environment
+env/
+venv/
+.venv/
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# PyTorch / Hugging Face caches
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.h5
+*.msgpack
+cache/
+hf_cache/
+~$*
+
+!results/
+!results/**/*.json
+
+Thumbs.db
+.vscode/
+.idea/

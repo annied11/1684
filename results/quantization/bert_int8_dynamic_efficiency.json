@@ -1,0 +1,8 @@
+{
+  "method": "dynamic_int8",
+  "tag": "bert_int8_dynamic",
+  "base": "models/base/bert-base-uncased",
+  "params_total": 109514298,
+  "artifact_size_mb": 195.57,
+  "weights_file": "quantized_state_dict.pt"
+}
