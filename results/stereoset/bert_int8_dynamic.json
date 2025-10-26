@@ -1,0 +1,16 @@
+{
+  "n": 2106,
+  "counts": {
+    "stereotype": 696,
+    "anti": 713,
+    "unrelated": 697
+  },
+  "proportions": {
+    "stereotype": 0.33048433048433046,
+    "anti": 0.3385565052231719,
+    "unrelated": 0.3309591642924976
+  },
+  "stereotype_rate_given_bias_pair": 0.49396735273243436,
+  "avg_time_per_example_sec": 0.5584538459551414,
+  "total_time_sec": 1176.1037995815277
+}

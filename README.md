@@ -28,21 +28,39 @@ The approach can be divided into three main stages:
 We will start with pretrained transformer-based models, such as BERT or smaller LLaMA variants to ensure feasibility under compute constraints. Each model will undergo common compression strategies:
 
 - **Pruning:** Gradual magnitude pruning of weights at different sparsity levels.  
-- **Quantization:** Post-training quantization (8-bit and 4-bit) for weight and activation reduction. (TBD)
-- **Knowledge Distillation (Stretch Goal):** Training a smaller student model from a teacher model to study transferred bias patterns. (TBD)
+- **Quantization:** Post-training quantization (8-bit and 4-bit) for weight and activation reduction.  
+- **Knowledge Distillation (Stretch Goal):** Training a smaller student model from a teacher model to study transferred bias patterns.
 
 ### Bias Evaluation
-TBD
+We use the **StereoSet** dataset to evaluate social bias (stereotype vs. anti-stereotype completions).  
+Models are scored using masked language modeling, where the most likely completion determines bias tendency.  
+Metrics include:
+- **Stereotype Rate:** fraction of bias-related completions favoring stereotypes.  
+- **Proportion Breakdown:** counts of stereotype, anti-stereotype, and unrelated predictions.  
+- **Average Inference Time:** per example latency to evaluate efficiency tradeoffs.
 
 ### Comparative Analysis
 TBD
-
 
 ---
 
 ## How to Run
 ```bash
+# install dependencies
 pip install -r requirements.txt
+
+# baseline (BERT)
 python scripts/run_baseline.py
+
+# pruning (30%, 50%, 70%)
 python scripts/run_pruning.py
 
+# quantization (8-bit dynamic)
+python scripts/run_quantization.py
+
+# evaluate all models on StereoSet
+python scripts/eval_stereoset.py --model_dir models/base/bert-base-uncased --out results/stereoset/bert_base.json
+python scripts/eval_stereoset.py --model_dir models/pruning/bert_prune30 --out results/stereoset/bert_prune30.json
+python scripts/eval_stereoset.py --model_dir models/pruning/bert_prune50 --out results/stereoset/bert_prune50.json
+python scripts/eval_stereoset.py --model_dir models/pruning/bert_prune70 --out results/stereoset/bert_prune70.json
+python scripts/eval_stereoset.py --model_dir models/quantization/bert_int8_dynamic --out results/stereoset/bert_int8_dynamic.json

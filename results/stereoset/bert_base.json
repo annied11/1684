@@ -10,6 +10,7 @@
     "anti": 0.4444444444444444,
     "unrelated": 0.2345679012345679
   },
-  "avg_time_per_example_sec": 0.33695156950103816,
-  "total_time_sec": 709.6200053691864
+  "stereotype_rate_given_bias_pair": 0.41935483870967744,
+  "avg_time_per_example_sec": 6.556035328115153,
+  "total_time_sec": 13807.010401010513
 }
