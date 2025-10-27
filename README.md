@@ -40,7 +40,10 @@ Metrics include:
 - **Average Inference Time:** per example latency to evaluate efficiency tradeoffs.
 
 ### Comparative Analysis
-TBD
+Use information from the Bias Evaluation including the **Stereotype Rate** and more to evaluate the differences between increased compression rates and stereotyped choices. This is shown and discussed in various ways:
+ - **Table:** Simple table showing the model and stereotype rate anaylzing what that means in the context
+ - **Pearson Correlation Coefficient:** Showing and seeing if there is a relationship between increased compression and stereotype
+ - **Visualization:** Use a graph to show and discuss the trade off between increased stereotyping of models and their efficiency 
 
 ---
 
