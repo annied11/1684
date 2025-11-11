@@ -1,4 +1,4 @@
-# 1684 Project Bias in Compressed Models
+# Bias in Compressed Models
 
 ## Folder Structure
     1684/
