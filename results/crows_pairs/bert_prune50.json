@@ -1,0 +1,15 @@
+{
+  "model": "bert_prune50",
+  "n": 1508,
+  "counts": {
+    "stereotype": 823,
+    "anti": 685
+  },
+  "proportions": {
+    "stereotype": 0.5457559681697612,
+    "anti": 0.4542440318302387
+  },
+  "stereotype_rate": 0.5457559681697612,
+  "avg_time_per_example_sec": 3.63139500557902,
+  "total_time_sec": 5476.143668413162
+}

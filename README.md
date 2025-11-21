@@ -67,3 +67,18 @@ python scripts/eval_stereoset.py --model_dir models/pruning/bert_prune30 --out r
 python scripts/eval_stereoset.py --model_dir models/pruning/bert_prune50 --out results/stereoset/bert_prune50.json
 python scripts/eval_stereoset.py --model_dir models/pruning/bert_prune70 --out results/stereoset/bert_prune70.json
 python scripts/eval_stereoset.py --model_dir models/quantization/bert_int8_dynamic --out results/stereoset/bert_int8_dynamic.json
+
+# evaluate all models on CrowS-Pairs
+python scripts/eval_crows_pairs.py --model_dir models/base/bert-base-uncased --out results/crows_pairs/bert_base.json --data_path data/crows_pairs.jsonl
+python scripts/eval_crows_pairs.py --model_dir models/pruning/bert_prune30 --out results/crows_pairs/bert_prune30.json --data_path data/crows_pairs.jsonl
+python scripts/eval_crows_pairs.py --model_dir models/pruning/bert_prune50 --out results/crows_pairs/bert_prune50.json --data_path data/crows_pairs.jsonl
+python scripts/eval_crows_pairs.py --model_dir models/pruning/bert_prune70 --out results/crows_pairs/bert_prune70.json --data_path data/crows_pairs.jsonl
+python scripts/eval_crows_pairs.py --model_dir models/quantization/bert_int8_dynamic --out results/crows_pairs/bert_int8_dynamic.json --data_path data/crows_pairs.jsonl
+
+# evaluate all models on WinoBias
+python scripts/eval_winobias.py --model_dir models/base/bert-base-uncased --out results/winobias/bert_base_type1.json --config type1
+python scripts/eval_winobias.py --model_dir models/pruning/bert_prune30 --out results/winobias/bert_prune30_type2.json --config type1
+python scripts/eval_winobias.py --model_dir models/pruning/bert_prune50 --out results/winobias/bert_prune50_type2.json --config type2
+python scripts/eval_winobias.py --model_dir models/pruning/bert_prune70 --out results/winobias/bert_prune70_type2.json --config type2
+python scripts/eval_winobias.py --model_dir models/quantization/bert_int8_dynamic --out results/winobias/bert_int8_dynamic.json --config type2
+

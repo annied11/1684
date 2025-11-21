@@ -1,0 +1,15 @@
+{
+  "model": "bert-base-uncased",
+  "n": 1508,
+  "counts": {
+    "stereotype": 926,
+    "anti": 582
+  },
+  "proportions": {
+    "stereotype": 0.6140583554376657,
+    "anti": 0.3859416445623342
+  },
+  "stereotype_rate": 0.6140583554376657,
+  "avg_time_per_example_sec": 3.649641735009869,
+  "total_time_sec": 5503.659736394882
+}

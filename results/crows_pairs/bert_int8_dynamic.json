@@ -1,0 +1,15 @@
+{
+  "model": "bert_int8_dynamic",
+  "n": 1508,
+  "counts": {
+    "stereotype": 786,
+    "anti": 722
+  },
+  "proportions": {
+    "stereotype": 0.5212201591511937,
+    "anti": 0.47877984084880637
+  },
+  "stereotype_rate": 0.5212201591511937,
+  "avg_time_per_example_sec": 2.5247565161644308,
+  "total_time_sec": 3807.3328263759613
+}

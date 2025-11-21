@@ -1,0 +1,16 @@
+{
+  "model": "bert_int8_dynamic",
+  "config": "type2",
+  "n": 396,
+  "counts": {
+    "pro": 230,
+    "anti": 166
+  },
+  "proportions": {
+    "pro": 0.5808080808080808,
+    "anti": 0.41919191919191917
+  },
+  "stereotype_rate": 0.5808080808080808,
+  "avg_time_per_example_sec": 8.167855528870014,
+  "total_time_sec": 3234.4707894325256
+}
