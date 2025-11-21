@@ -1,16 +1,16 @@
 {
-  "model": "bert_prune50",
+  "model": "bert_prune70",
   "config": "type2",
   "n": 396,
   "counts": {
-    "pro": 193,
-    "anti": 203
+    "pro": 200,
+    "anti": 196
   },
   "proportions": {
-    "pro": 0.48737373737373735,
-    "anti": 0.5126262626262627
+    "pro": 0.5050505050505051,
+    "anti": 0.494949494949495
   },
-  "stereotype_rate": 0.48737373737373735,
-  "avg_time_per_example_sec": 2.636992022244617,
-  "total_time_sec": 1044.2488408088684
+  "stereotype_rate": 0.5050505050505051,
+  "avg_time_per_example_sec": 1.7866847087638547,
+  "total_time_sec": 707.5271446704865
 }

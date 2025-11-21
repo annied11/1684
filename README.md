@@ -45,7 +45,18 @@ Use information from the Bias Evaluation including the **Stereotype Rate** and m
  - **Pearson Correlation Coefficient:** Showing and seeing if there is a relationship between increased compression and stereotype
  - **Visualization:** Use a graph to show and discuss the trade off between increased stereotyping of models and their efficiency 
 
----
+### Comparative Table (Stereotype Rate by Dataset)
+
+| Model               | StereoSet ↑ | CrowS-Pairs ↑ | WinoBias ↑ (config) | Bias-in-Bios ↑ |
+|---------------------|------------:|--------------:|---------------------:|---------------:|
+| bert-base-uncased   | 0.4194      | 0.6141        | 0.5076 (type1)       | TBD            |
+| bert_int8_dynamic   | 0.4940      | 0.5212        | 0.5808 (type2)       | TBD            |
+| bert_prune30        | 0.4580      | 0.6008        | 0.5025 (type1)       | TBD            |
+| bert_prune50        | 0.4820      | 0.5458        | 0.4874 (type2)       | TBD            |
+| bert_prune70        | 0.5326      | 0.4768        | 0.5051 (type2)       | TBD            |
+
+<sub>↑ higher = more stereotyped choices (worse fairness).</sub>
+
 
 ## How to Run
 ```bash
@@ -77,7 +88,7 @@ python scripts/eval_crows_pairs.py --model_dir models/quantization/bert_int8_dyn
 
 # evaluate all models on WinoBias
 python scripts/eval_winobias.py --model_dir models/base/bert-base-uncased --out results/winobias/bert_base_type1.json --config type1
-python scripts/eval_winobias.py --model_dir models/pruning/bert_prune30 --out results/winobias/bert_prune30_type2.json --config type1
+python scripts/eval_winobias.py --model_dir models/pruning/bert_prune30 --out results/winobias/bert_prune30_type1.json --config type1
 python scripts/eval_winobias.py --model_dir models/pruning/bert_prune50 --out results/winobias/bert_prune50_type2.json --config type2
 python scripts/eval_winobias.py --model_dir models/pruning/bert_prune70 --out results/winobias/bert_prune70_type2.json --config type2
 python scripts/eval_winobias.py --model_dir models/quantization/bert_int8_dynamic --out results/winobias/bert_int8_dynamic.json --config type2

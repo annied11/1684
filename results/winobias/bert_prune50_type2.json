@@ -11,6 +11,6 @@
     "anti": 0.5126262626262627
   },
   "stereotype_rate": 0.48737373737373735,
-  "avg_time_per_example_sec": 3.007158243294918,
-  "total_time_sec": 1190.8346643447876
+  "avg_time_per_example_sec": 1.8283649105014224,
+  "total_time_sec": 724.0325045585632
 }
