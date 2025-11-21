@@ -21,21 +21,20 @@ def load_model_and_tokenizer(model_dir):
     tok = AutoTokenizer.from_pretrained(model_dir)
 
     if os.path.exists(quant_path) and not (has_bin or has_safe):
-        # Quantized checkpoint branch
+        # quantized checkpoint branch
         cfg = AutoConfig.from_pretrained(model_dir)
         m = AutoModelForMaskedLM.from_config(cfg)
         m.eval()
 
-        # Convert modules to quantized dynamic Linear *before* loading the quantized state dict
         m = torch.quantization.quantize_dynamic(m, {torch.nn.Linear}, dtype=torch.qint8)
 
         q_state = torch.load(quant_path, map_location="cpu")
-        # With matching quantized modules, we can load strictly (no missing/unexpected keys)
+        # load strictly (no missing/unexpected keys)
         m.load_state_dict(q_state, strict=True)
         m.eval()
         return m, tok
 
-    # Standard HF checkpoint branch
+    # HF checkpoint branch
     m = AutoModelForMaskedLM.from_pretrained(model_dir)
     m.eval()
     return m, tok
@@ -52,7 +51,6 @@ def pll_score(text, tok, model):
 
     with torch.no_grad():
         total = 0.0
-        # Skip [CLS] and [SEP]
         for i in range(1, len(input_ids) - 1):
             masked = input_ids.clone()
             masked[i] = tok.mask_token_id
@@ -65,7 +63,6 @@ def pll_score(text, tok, model):
 
 def _detok(tokens):
     s = " ".join(tokens)
-    # very light detok for punctuation/quotes
     for p in [ " .", " ,", " !", " ?", " ;", " :", " )", " ]", " 's" ]:
         s = s.replace(p, p[1:])
     s = s.replace("( ", "(").replace("[ ", "[")
