@@ -41,11 +41,7 @@ Metrics include:
 
 ### Comparative Analysis
 Use information from the Bias Evaluation including the **Stereotype Rate** and more to evaluate the differences between increased compression rates and stereotyped choices. This is shown and discussed in various ways:
- - **Table:** Simple table showing the model and stereotype rate anaylzing what that means in the context
- - **Pearson Correlation Coefficient:** Showing and seeing if there is a relationship between increased compression and stereotype
- - **Visualization:** Use a graph to show and discuss the trade off between increased stereotyping of models and their efficiency 
-
-### Comparative Table (Stereotype Rate by Dataset)
+ - **Table:** Simple table showing the model and stereotype rate anaylzing what that means in the context (Stereotype Rate by Dataset)
 
 | Model               | StereoSet ↑ | CrowS-Pairs ↑ | WinoBias ↑ (config) | Bias-in-Bios ↑ |
 |---------------------|------------:|--------------:|---------------------:|---------------:|
@@ -57,7 +53,10 @@ Use information from the Bias Evaluation including the **Stereotype Rate** and m
 
 <sub>↑ higher = more stereotyped choices (worse fairness).</sub>
 
+ - **Pearson Correlation Coefficient:** Showing and seeing if there is a relationship between increased compression and stereotype
+ - **Visualization:** Use a graph to show and discuss the trade off between increased stereotyping of models and their efficiency 
 
+---
 ## How to Run
 ```bash
 # install dependencies
