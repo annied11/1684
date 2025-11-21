@@ -48,11 +48,11 @@ def main():
     ap.add_argument("--model_dir", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--data_path", default=None, help="optional local CrowS-Pairs jsonl")
-    ap.add_argument("--limit", type=int, default=None, help="evaluate only the first N examples")  # CHANGE 1: add limit
+    ap.add_argument("--limit", type=int, default=None, help="evaluate only the first N examples") 
     args = ap.parse_args()
 
     rows = load_crows_pairs(args)
-    if args.limit:                       # CHANGE 1: apply limit
+    if args.limit:                       
         rows = rows[:args.limit]
 
     model, tok = load_model_and_tokenizer(args.model_dir)
@@ -69,7 +69,7 @@ def main():
         else:
             cnt["anti"] += 1
 
-        if i % 25 == 0 or i == n:       # CHANGE 2: progress heartbeat every 25 examples
+        if i % 25 == 0 or i == n:       
             print(f"[CrowS-Pairs] {i}/{n} done")
 
     dt = time.time() - t0
