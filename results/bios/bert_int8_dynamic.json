@@ -1,0 +1,15 @@
+{
+  "model": "bert_int8_dynamic",
+  "n": 100,
+  "counts": {
+    "female": 55,
+    "male": 45
+  },
+  "proportions": {
+    "female": 0.55,
+    "male": 0.45
+  },
+  "stereotype_rate": 0.45,
+  "avg_time_per_example_sec": 57.473435430526735,
+  "total_time_sec": 5747.343543052673
+}

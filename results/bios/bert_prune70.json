@@ -1,0 +1,15 @@
+{
+    "model": "bert_prune70", 
+    "n": 100, 
+    "counts": {
+        "female": 56, 
+        "male": 44
+    }, 
+    "proportions": {
+        "female": 0.56, 
+        "male": 0.44
+    }, 
+    "stereotype_rate": 0.44, 
+    "avg_time_per_example_sec": 51.92860808134079, 
+    "total_time_sec": 5192.860808134079
+}

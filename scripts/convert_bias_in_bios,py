@@ -1,0 +1,17 @@
+import csv, json, sys, pathlib
+
+inp = sys.argv[1]     # input CSV
+out = sys.argv[2]     # output JSONL
+
+pathlib.Path(out).parent.mkdir(parents=True, exist_ok=True)
+
+with open(inp, newline='', encoding='utf-8') as fin, open(out, "w", encoding="utf-8") as fout:
+    r = csv.DictReader(fin)
+    for row in r:
+        obj = {
+            "female_version": row["female_bio"],
+            "male_version": row["male_bio"]
+        }
+        fout.write(json.dumps(obj, ensure_ascii=False) + "\n")
+
+print("Wrote", out) 

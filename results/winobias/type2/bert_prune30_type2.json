@@ -1,0 +1,16 @@
+{
+  "model": "bert_prune30",
+  "config": "type2",
+  "n": 396,
+  "counts": {
+    "pro": 222,
+    "anti": 174
+  },
+  "proportions": {
+    "pro": 0.5606060606060606,
+    "anti": 0.4393939393939394
+  },
+  "stereotype_rate": 0.5606060606060606,
+  "avg_time_per_example_sec": 3.953786262358078,
+  "total_time_sec": 1565.6993598937988
+}
