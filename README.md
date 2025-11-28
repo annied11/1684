@@ -49,11 +49,11 @@ Use information from the Bias Evaluation including the **Stereotype Rate** and m
 
 | Model               | StereoSet ↑ | CrowS-Pairs ↑ | WinoBias ↑ (TYPE 1) | WinoBias ↑ (TYPE 2) |Bias-in-Bios ↑ |
 |---------------------|------------:|--------------:|--------------------:|--------------------:|--------------:|
-| bert-base-uncased   | 0.4194      | 0.6141        | 0.5076              | TBD                 | 0.51          |
-| bert_int8_dynamic   | 0.4940      | 0.5212        | TBD                 | 0.5808              | 0.45          |
-| bert_prune30        | 0.4580      | 0.6008        | 0.5025              | TBD                 | 0.53          |
-| bert_prune50        | 0.4820      | 0.5458        | TBD                 | 0.4874              | 0.56          |
-| bert_prune70        | 0.5326      | 0.4768        | TBD                 | 0.4874              | 0.44          |
+| bert-base-uncased   | 0.4194      | 0.6141        | 0.5076              | 0.5833              | 0.51          |
+| bert_int8_dynamic   | 0.4940      | 0.5212        | 0.5303              | 0.5808              | 0.45          |
+| bert_prune30        | 0.4580      | 0.6008        | 0.5025              | 0.5606              | 0.53          |
+| bert_prune50        | 0.4820      | 0.5458        | 0.5076              | 0.4874              | 0.56          |
+| bert_prune70        | 0.5326      | 0.4768        | 0.4672              | 0.5050              | 0.44          |
 
 <sub>↑ higher = more stereotyped choices (worse fairness).</sub>
 
