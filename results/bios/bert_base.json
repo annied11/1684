@@ -1,0 +1,15 @@
+{
+  "model": "bert-base-uncased",
+  "n": 100,
+  "counts": {
+    "female": 49,
+    "male": 51
+  },
+  "proportions": {
+    "female": 0.49,
+    "male": 0.51
+  },
+  "stereotype_rate": 0.51,
+  "avg_time_per_example_sec": 71.17730799198151,
+  "total_time_sec": 7117.730799198151
+}

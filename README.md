@@ -47,13 +47,13 @@ Use information from the Bias Evaluation including the **Stereotype Rate** and m
 
 ### Comparative Table (Stereotype Rate by Dataset)
 
-| Model               | StereoSet ↑ | CrowS-Pairs ↑ | WinoBias ↑ (config) | Bias-in-Bios ↑ |
-|---------------------|------------:|--------------:|---------------------:|---------------:|
-| bert-base-uncased   | 0.4194      | 0.6141        | 0.5076 (type1)       | TBD            |
-| bert_int8_dynamic   | 0.4940      | 0.5212        | 0.5808 (type2)       | TBD            |
-| bert_prune30        | 0.4580      | 0.6008        | 0.5025 (type1)       | TBD            |
-| bert_prune50        | 0.4820      | 0.5458        | 0.4874 (type2)       | TBD            |
-| bert_prune70        | 0.5326      | 0.4768        | 0.5051 (type2)       | TBD            |
+| Model               | StereoSet ↑ | CrowS-Pairs ↑ | WinoBias ↑ (TYPE 1) | WinoBias ↑ (TYPE 2) |Bias-in-Bios ↑ |
+|---------------------|------------:|--------------:|--------------------:|--------------------:|--------------:|
+| bert-base-uncased   | 0.4194      | 0.6141        | 0.5076              | TBD                 | 0.51          |
+| bert_int8_dynamic   | 0.4940      | 0.5212        | TBD                 | 0.5808              | 0.45          |
+| bert_prune30        | 0.4580      | 0.6008        | 0.5025              | TBD                 | 0.53          |
+| bert_prune50        | 0.4820      | 0.5458        | TBD                 | 0.4874              | 0.56          |
+| bert_prune70        | 0.5326      | 0.4768        | TBD                 | 0.4874              | 0.44          |
 
 <sub>↑ higher = more stereotyped choices (worse fairness).</sub>
 
@@ -86,10 +86,24 @@ python scripts/eval_crows_pairs.py --model_dir models/pruning/bert_prune50 --out
 python scripts/eval_crows_pairs.py --model_dir models/pruning/bert_prune70 --out results/crows_pairs/bert_prune70.json --data_path data/crows_pairs.jsonl
 python scripts/eval_crows_pairs.py --model_dir models/quantization/bert_int8_dynamic --out results/crows_pairs/bert_int8_dynamic.json --data_path data/crows_pairs.jsonl
 
-# evaluate all models on WinoBias
+# evaluate all models on WinoBias type 1
 python scripts/eval_winobias.py --model_dir models/base/bert-base-uncased --out results/winobias/bert_base_type1.json --config type1
 python scripts/eval_winobias.py --model_dir models/pruning/bert_prune30 --out results/winobias/bert_prune30_type1.json --config type1
+python scripts/eval_winobias.py --model_dir models/pruning/bert_prune50 --out results/winobias/bert_prune50_type1.json --config type1
+python scripts/eval_winobias.py --model_dir models/pruning/bert_prune70 --out results/winobias/bert_prune70_type1.json --config type1
+python scripts/eval_winobias.py --model_dir models/quantization/bert_int8_dynamic --out results/winobias/bert_int8_dynamic_type1.json --config type1
+
+# evaluate all models on WinoBias type 2
+python scripts/eval_winobias.py --model_dir models/base/bert-base-uncased --out results/winobias/bert_base_type2.json --config type2
+python scripts/eval_winobias.py --model_dir models/pruning/bert_prune30 --out results/winobias/bert_prune30_type2.json --config type2
 python scripts/eval_winobias.py --model_dir models/pruning/bert_prune50 --out results/winobias/bert_prune50_type2.json --config type2
 python scripts/eval_winobias.py --model_dir models/pruning/bert_prune70 --out results/winobias/bert_prune70_type2.json --config type2
-python scripts/eval_winobias.py --model_dir models/quantization/bert_int8_dynamic --out results/winobias/bert_int8_dynamic.json --config type2
+python scripts/eval_winobias.py --model_dir models/quantization/bert_int8_dynamic --out results/winobias/bert_int8_dynamic_type2.json --config type2
+
+# evaluate Bias-in-Bios
+python scripts/eval_bias_in_bios.py --model_dir models/base/bert-base-uncased --out results/bios/bert_base.json --limit 100
+python scripts/eval_bias_in_bios.py --model_dir models/pruning/bert_prune30 --out results/bios/bert_prune30.json --limit 100
+python scripts/eval_bias_in_bios.py --model_dir models/pruning/bert_prune50 --out results/bios/bert_prune50.json --limit 100
+python scripts/eval_bias_in_bios.py --model_dir models/pruning/bert_prune70 --out results/bios/bert_prune70.json --limit 100
+python scripts/eval_bias_in_bios.py --model_dir models/quantization/bert_int8_dynamic --out results/bios/bert_int8_dynamic.json --limit 100
 
